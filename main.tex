@@ -11,11 +11,11 @@
 \usepackage{colortbl}
 \usepackage{multirow}
 \usepackage{caption}
+\addtobeamertemplate{background canvas}{\transfade[duration=0.8]}{}
 
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{frametitle}[default][center]
-
 
 \usepackage{xcolor}
 \definecolor{mbrown}{RGB}{106, 72, 10}
@@ -43,7 +43,6 @@
 
 \begin{frame}
   \frametitle{What is a DFIG?}
-  
   \begin{columns}
     \begin{column}{0.6\textwidth} 
     \begin{figure}
@@ -98,7 +97,7 @@
     \begin{figure}
         \centering
         \fbox{\includegraphics[width=2.8in]{imgs/antiFriction.png}}
-        \caption{Courtesy cedengineering.com}
+        \caption{Image Courtesy of cedengineering.com}
     \end{figure}    
 \end{frame}
 
@@ -133,7 +132,7 @@
     \begin{figure}
         \centering
         \fbox{\includegraphics[width=3.9in]{imgs/rotorSlipRings.png}}
-        \caption{Courtesy ABB}
+        \caption{Image courtesy of ABB}
     \end{figure}    
 \end{frame}
 
@@ -206,11 +205,58 @@
 
 
 \section{Variable Speed Operation}
+\begin{frame}{Working}
+    \begin{figure}
+        \centering
+        \includegraphics[width=2.85in]{imgs/dfigOP (1).jpg}
+        \caption{Stator and Rotor of DFIG}
+    \end{figure}
+\end{frame}
 
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=2.85in]{imgs/dfigOP (2).jpg}
+        \caption{Mechanical power imparted into rotor, which induces AC voltage with frequency $f_{stator}$}
 
+        
+    \end{figure}
+\end{frame}
 
-\begin{frame}
-    \frametitle{Doubly-fed Induction Generator Empirical data}
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=2.85in]{imgs/dfigOP (3).jpg}
+        \caption{Rotor's AC current frequency determines the speed of Rotor's magnetic field.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Low Wind Speed}
+    \begin{figure}
+        \centering
+        \includegraphics[width=2.85in]{imgs/dfigOP (4).jpg}
+        \caption{Stator R.M.F. = Rotor's Mech. Speed + Rotor R.M.F. Speed}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{High Wind Speed}
+    \begin{figure}
+        \centering
+        \includegraphics[width=2.85in]{imgs/dfigOP opposite.jpg}
+        \caption{Stator R.M.F. = Rotor's Mech. Speed +  (- R.M.F. Speed)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Animation}
+    \href{}{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-system.mp4}
+    
+
+    \href{}{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-system.mp4}
+
+    
+\end{frame}
+
+\begin{frame}{Doubly-fed Induction Generator Empirical data}
     \begin{table}[h]
     \centering
     \rowcolors{2}{gray!25}{white} % Alternating row colors
@@ -236,7 +282,7 @@
     \end{tabular}
     }
     
-    \caption{Table of Doubly-fed Induction Generator Results. from Ref 1}
+    \caption{Table of Doubly-fed Induction Generator Results. from: Reference 1}
     
     \textbf{Machine data}:
     
@@ -257,7 +303,7 @@
 
     \item During periods of \textbf{low wind speeds}, the rotor frequency is increased, to match the synchronous grid frequency.
 
-    \item Conversely, during \textbf{high wind speeds}, the rotor frequency is increased, but the direction of $Rotor_{RMF}$ is reversed to counterbalance the high speed matching the synchronous grid frequency. 
+    \item Conversely, during \textbf{high wind speeds}, the rotor frequency is increased, but the direction of $Rotor_{R.M.F.}$ is reversed to counterbalance the high speed matching the synchronous grid frequency. 
 
 \end{itemize}
 \end{frame}
@@ -270,7 +316,7 @@
     \begin{figure}
         \centering
         \fbox{\includegraphics[width=2.2in]{imgs/capa.png}}
-        \caption{Capability curve of DFIG.}
+        \caption{Capability curve of DFIG}
     \end{figure}
     \end{column}
     
@@ -322,31 +368,44 @@
   \end{block}
 \end{frame}
 
-
+\section{Acknowledgements}
 \begin{frame}{References}
     This presentation would not have been possible without the invaluable following:
     \vspace{0.1in}
     \begin{enumerate}
-        \item \href{https://web.archive.org/web/20230526092355/https://labvolt.festo.com/downloads/86376_F0.pdf}{A wonderful practical introduction to DFIG from labvolt.festo.com}
+        \item \href{https://web.archive.org/web/20230526092355/https://labvolt.festo.com/downloads/86376_F0.pdf}{A \textbf{wonderful practical} introduction to DFIG from labvolt.festo.com}
 
-      \item \href{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-wind-turbine-principle.html}{Peng DFIGs principle with beautiful animations}
+      \item \href{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-wind-turbine-principle.html}{Peng DFIGs principle with \textbf{beautiful} animations}
       
+        \item \href{https://www.wikiwand.com/en/Doubly_fed_electric_machine}{DFIG Wikipedia-Wikiwand}
+
+        
         \item \href{https://new.abb.com/motors-generators/generators/generators-for-renewables/doubly-fed-generators}{ABB.com DFIGs}
         
         \item \href{https://www.youtube.com/watch?v=Fvc2I0L2vMU}{Evan Knapp video on DIFG}
         
-        
-        \item \href{https://www.overleaf.com}{Overleaf.com, which was used for preparing this presentation.}
-        
-        \item Special thanks to LaTeX Beamer tools and the authors of the Singapore theme, whose contributions greatly improved the quality of this presentation.
         \end{enumerate}
 \end{frame}
 
-\begin{frame}{References contd.}
+\begin{frame}{Tools Utilized (References)}
     \begin{enumerate}
-        \item Latex Beamer source code can be found here, \href{}{}
-    \end{enumerate}
-\end{frame}
+        \item Latex Beamer source code for this presentation can be, found here  \href{https://github.com/200901002/DFIG-Seminar}{GitHub DFIG seminar Adhithya}
+        
+        \item Adobe Photoshop was used to edit some of the images.
 
+        \item \href{https://www.overleaf.com}{Overleaf.com, which was used for preparing this presentation.}
+        
+        \item Special thanks to LaTeX Beamer tools and the authors of the Singapore theme, whose contributions greatly improved the quality of this presentation.
+    \end{enumerate}
+\vspace{0.2in}
+
+\begin{quote}
+    \textcolor{mbrown}{``Education is the journey that transforms curiosity into knowledge and passion into expertise.''}
+\end{quote}
+
+\begin{center}
+        {\Large{Thank you for your time.}}
+\end{center}
+\end{frame}
 
 \end{document}
