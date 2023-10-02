@@ -1,0 +1,351 @@
+\documentclass{beamer}
+\usepackage[table]{xcolor}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{tcolorbox}
+
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{caption}
+
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{frametitle}[default][center]
+
+\usepackage{xcolor}
+\definecolor{mbrown}{RGB}{106, 72, 10}
+
+\usetheme{Singapore}
+\usecolortheme[named=mbrown]{structure}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue, % Color of internal links
+    urlcolor=blue   % Color of external links
+}
+\date{October 3 2023}
+\begin{document}
+
+\begin{frame}{Doubly Fed Induction Generator}
+\centering By Adhithya
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=3.5in]{imgs/windFarm.jpg}}
+\end{figure}
+\end{frame}
+
+\section{Structure of DFIG}
+
+\begin{frame}
+  \frametitle{What is a DFIG?}
+  
+  \begin{columns}
+    \begin{column}{0.6\textwidth} 
+    \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=2.2in]{imgs/ABB.png}}
+        \caption{Commercially available DFIG.
+        \textit{Courtesy of ABB}}
+    \end{figure}
+    \end{column}
+    
+    \begin{column}{0.4\textwidth} % Adjust the width as needed
+      \begin{itemize}
+        \item It has two sets of $\textcolor{red!70!black}{3} \, \textcolor{yellow!50!black}{\phi} \, \textcolor{blue!70!black}{windings}$: on both \textbf{stator} and \textbf{rotor}.
+        
+        \item Suited for \textbf{variable speed} common which is common with wind turbines.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Technical Specification}
+  
+  \begin{columns}
+  
+        \begin{column}{0.4\textwidth} % Adjust the width as needed
+    \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=2.0in]{imgs/spec.png}}
+        \caption{\small Nameplate details.
+        
+        \textit{Courtesy of ABB}}
+    \end{figure}
+    \end{column}
+    
+    \begin{column}{0.6\textwidth} 
+    \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=2in]{imgs/ABB.png}}
+    \end{figure}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+
+
+
+\begin{frame}{Antifriction bearing}
+
+    \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=2.8in]{imgs/antiFriction.png}}
+        \caption{Courtesy cedengineering.com}
+    \end{figure}    
+\end{frame}
+
+\begin{frame}{Stator}
+        \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=3.7in]{imgs/stator.png}}
+        \caption{Typical large $\textcolor{red!70!black}{3} \, \textcolor{yellow!50!black}{\phi} \, \textcolor{blue!70!black}{stator}.$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Rotor}
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \begin{figure}
+      \fbox{\includegraphics[width=\linewidth]{imgs/sqCageRotor.png}}
+      \caption{Squirrel Cage}
+    \end{figure}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \begin{figure}
+      \fbox{\includegraphics[width=0.7\linewidth]{imgs/rotor1.png}}
+      \caption{Wound Rotor}
+    \end{figure}
+  \end{minipage}
+\end{frame}
+
+
+\begin{frame}{Rotor}
+
+    \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=3.9in]{imgs/rotorSlipRings.png}}
+        \caption{Courtesy ABB}
+    \end{figure}    
+\end{frame}
+
+
+\begin{frame}{Rotor details}
+  
+  \begin{columns}
+  
+        \begin{column}{0.6\textwidth} % Adjust the width as needed
+    \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=2.0in]{imgs/rotor.png}}
+        \caption{\small DFIG Rotor.}
+    \end{figure}
+    \end{column}
+    
+    \begin{column}{0.4\textwidth} 
+        \begin{itemize}
+            \item Rotor have high turns $(2\times\, to \,3\times)$ that of stator.
+
+            \item Consequently rotor will have the rotor voltages will be higher and currents respectively lower. 
+        \end{itemize}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+
+\section{DFIG System}
+
+\begin{frame}{}
+       \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=4.5in]{imgs/working (2).jpg}}
+        \caption{Prime Mover and it's auxiliaries.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{}
+       \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=4.5in]{imgs/working (3).jpg}}
+        \caption{Generator}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{}
+       \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=4.5in]{imgs/working (4).jpg}}
+        \caption{Stator Connections}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{}
+       \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=4.5in]{imgs/working (5).jpg}}
+        \caption{Rotor Connections and control}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{}
+       \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=4.5in]{imgs/DFIG.jpg}}
+        \caption{DFIG system as a Whole.}
+    \end{figure}
+\end{frame}
+
+
+\section{Variable Speed Operation}
+
+
+
+\begin{frame}
+    \frametitle{Doubly-fed Induction Generator Empirical data}
+    \begin{table}[h]
+    \centering
+    \rowcolors{2}{gray!25}{white} % Alternating row colors
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \rowcolor{gray!50} % Header row color
+    \textbf{Speed (r/min)} & \textbf{Mechanical Power (W)} & \textbf{Stator Active Power (W)} & \textbf{Stator Reactive Power (var)} & \textbf{Rotor Frequency (Hz)} \\
+    \hline
+    1470 & 230.6 & 264.5 & 4.49 & 11 \\
+    1500 & 235.4 & 267.0 & 4.55 & 10 \\
+    1530 & 240.1 & 264.7 & -1.03 & 9 \\
+    1559 & 244.5 & 264.7 & 5.53 & 8 \\
+    1800 & 282.4 & 265.8 & 9.78 & 0 \\
+    1919 & 300.8 & 264.4 & 2.25 & -4 \\
+    1950 & 305.7 & 265.1 & -2.95 & -5 \\
+    1980 & 310.5 & 265.5 & 0.57 & -6 \\
+    2009 & 315.1 & 267.0 & 0.43 & -7 \\
+    2040 & 319.9 & 267.0 & 0.91 & -8 \\
+    2069 & 324.6 & 266.8 & -1.19 & -9 \\
+    2099 & 328.7 & 267.3 & -3.22 & -10 \\
+    \hline
+    \end{tabular}
+    }
+    
+    \caption{Table of Doubly-fed Induction Generator Results. from Ref 1}
+    
+    \textbf{Machine data}:
+    
+    \begin{itemize}
+        \item Poles $= 4$
+        \item Grid frequency $= 60\, Hz$
+        % \item Grid frequency $= 60\, Hz$
+    \end{itemize}
+    
+    \end{table}
+\end{frame}
+
+
+\begin{frame}{Key Points}
+\begin{itemize}
+    
+    \item A \textit{DFIG} functions as a \textit{variable-speed synchronous generator}, it can be adjusted by modifying the rotor frequency ($f_{\textit{rotor}}$).
+
+    \item During periods of \textbf{low wind speeds}, the rotor frequency is increased, to match the synchronous grid frequency.
+
+    \item Conversely, during \textbf{high wind speeds}, the rotor frequency is increased, but the direction of $Rotor_{RMF}$ is reversed to counterbalance the high speed matching the synchronous grid frequency. 
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Operational Range}
+ \begin{columns}
+\begin{column}{0.5\textwidth} 
+    \begin{figure}
+        \centering
+        \fbox{\includegraphics[width=2.2in]{imgs/capa.png}}
+        \caption{Capability curve of DFIG.}
+    \end{figure}
+    \end{column}
+    
+    \begin{column}{0.4\textwidth} % Adjust the width as needed
+      \begin{itemize}
+        \item It allows variation of $\pm \,30\%$ synchronous speed.
+
+        \item Limits due to Armature and Field heating.
+    
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\section{Control System}
+
+\begin{frame}{Control principle}
+
+\begin{itemize}
+ \item  The control principle used is either the 
+
+\begin{itemize}
+    \item Two-axis current vector control 
+    \item or Direct Torque Control D.T.C.
+\end{itemize}
+
+\item D.T.C. used for generator when high reactive currents are required from generator. 
+   
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+  \frametitle{Advantages of DFIGs}
+  \begin{block}{Compared to synchronous generators:}
+    \begin{itemize}
+      \item No need for synchronization or excitation.
+      \item Better fault ride-through capability. Synchronous generators may \textbf{slip} and become unstable, if the voltage of the stator winding goes below a certain threshold
+    \end{itemize}
+  \end{block}
+  \begin{block}{Compared to other induction generators:}
+    \begin{itemize}
+      \item No need for reactive power compensation or speed control devices.
+      \item Smaller converter size (only about 30\% of the rated power).
+      \item Ability to control active and reactive power independently.
+      \item Ability to support grid voltage and frequency regulation.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{References}
+    This presentation would not have been possible without the invaluable following:
+    \vspace{0.1in}
+    \begin{enumerate}
+        \item \href{https://web.archive.org/web/20230526092355/https://labvolt.festo.com/downloads/86376_F0.pdf}{A wonderful practical introduction to DFIG from labvolt.festo.com}
+
+      \item \href{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-wind-turbine-principle.html}{Peng DFIGs principle with beautiful animations}
+      
+        \item \href{https://new.abb.com/motors-generators/generators/generators-for-renewables/doubly-fed-generators}{ABB.com DFIGs}
+        
+        \item \href{https://www.youtube.com/watch?v=Fvc2I0L2vMU}{Evan Knapp video on DIFG}
+        
+        
+        \item \href{https://www.overleaf.com}{Overleaf.com, which was used for preparing this presentation.}
+        
+        \item Special thanks to LaTeX Beamer tools and the authors of the Singapore theme, whose contributions greatly improved the quality of this presentation.
+        \end{enumerate}
+\end{frame}
+
+\begin{frame}{References contd.}
+    \begin{enumerate}
+        \item Latex Beamer source code can be found here, \href{}{}
+    \end{enumerate}
+\end{frame}
+
+
+\end{document}
