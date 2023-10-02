@@ -1,16 +1,18 @@
 \documentclass{beamer}
 \usepackage[table]{xcolor}
+\usepackage{emoji}
 
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage{siunitx}
 \usepackage{tcolorbox}
 
 \usepackage{tabularx}
 \usepackage{colortbl}
 \usepackage{multirow}
 \usepackage{caption}
+
+
 \addtobeamertemplate{background canvas}{\transfade[duration=0.8]}{}
 
 
@@ -41,8 +43,7 @@
 
 \section{Structure of DFIG}
 
-\begin{frame}
-  \frametitle{What is a DFIG?}
+\begin{frame}{What is a DFIG?}
   \begin{columns}
     \begin{column}{0.6\textwidth} 
     \begin{figure}
@@ -64,8 +65,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Technical Specification}
+\begin{frame}{Technical Specification}
   
   \begin{columns}
   
@@ -153,7 +153,7 @@
         \begin{itemize}
             \item Rotor have high turns $(2\times\, to \,3\times)$ that of stator.
 
-            \item Consequently rotor will have the rotor voltages will be higher and currents respectively lower. 
+            \item Consequently, the rotor will have higher voltages and lower currents
         \end{itemize}
     \end{column}
 
@@ -218,8 +218,6 @@
         \centering
         \includegraphics[width=2.85in]{imgs/dfigOP (2).jpg}
         \caption{Mechanical power imparted into rotor, which induces AC voltage with frequency $f_{stator}$}
-
-        
     \end{figure}
 \end{frame}
 
@@ -231,7 +229,30 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Low Wind Speed}
+
+
+\begin{frame}{Animation time}
+\begin{itemize}
+    \item  \href{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/rotor-magnetic-field.mp4}{DFIG principle with Magnetic field animation}
+    
+
+    \item \href{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-system.mp4}{DFIG Operation}
+
+
+\vspace{0.5in}
+\begin{quote}
+\begin{center}
+    
+    \textcolor{mbrown}{``A picture is worth a thousand words, unless it’s an animation, then it’s priceless.'' \emoji{joy}}
+    
+\end{center}
+\end{quote}
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{}
     \begin{figure}
         \centering
         \includegraphics[width=2.85in]{imgs/dfigOP (4).jpg}
@@ -239,7 +260,7 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{High Wind Speed}
+\begin{frame}{}
     \begin{figure}
         \centering
         \includegraphics[width=2.85in]{imgs/dfigOP opposite.jpg}
@@ -247,14 +268,6 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Animation}
-    \href{}{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-system.mp4}
-    
-
-    \href{}{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-system.mp4}
-
-    
-\end{frame}
 
 \begin{frame}{Doubly-fed Induction Generator Empirical data}
     \begin{table}[h]
@@ -303,7 +316,7 @@
 
     \item During periods of \textbf{low wind speeds}, the rotor frequency is increased, to match the synchronous grid frequency.
 
-    \item Conversely, during \textbf{high wind speeds}, the rotor frequency is increased, but the direction of $Rotor_{R.M.F.}$ is reversed to counterbalance the high speed matching the synchronous grid frequency. 
+    \item Conversely, during \textbf{high wind speeds}, the rotor frequency is increased, but the direction of $Rotor_{R.M.F.}$ is reversed to counterbalance the high speed, matching the synchronous grid frequency. 
 
 \end{itemize}
 \end{frame}
@@ -324,7 +337,7 @@
       \begin{itemize}
         \item It allows variation of $\pm \,30\%$ synchronous speed.
 
-        \item Limits due to Armature and Field heating.
+        \item Limits due to armature and field heating.
     
       \end{itemize}
     \end{column}
@@ -344,68 +357,103 @@
     \item or Direct Torque Control D.T.C.
 \end{itemize}
 
-\item D.T.C. used for generator when high reactive currents are required from generator. 
-   
+\item D.T.C. proved to be stable high reactive currents are required from generator.
 \end{itemize}
-    
+
 \end{frame}
 
-\begin{frame}
-  \frametitle{Advantages of DFIGs}
-  \begin{block}{Compared to synchronous generators:}
-    \begin{itemize}
-      \item No need for synchronization or excitation.
-      \item Better fault ride-through capability. Synchronous generators may \textbf{slip} and become unstable, if the voltage of the stator winding goes below a certain threshold
-    \end{itemize}
-  \end{block}
-  \begin{block}{Compared to other induction generators:}
-    \begin{itemize}
-      \item No need for reactive power compensation or speed control devices.
-      \item Smaller converter size (only about 30\% of the rated power).
-      \item Ability to control active and reactive power independently.
-      \item Ability to support grid voltage and frequency regulation.
-    \end{itemize}
-  \end{block}
+
+
+\begin{frame}{Vector control of DFIG}
+    \begin{figure}
+        \centering
+        \includegraphics[width=4in]{imgs/rotorSideConv.png}
+    \end{figure}    
 \end{frame}
+
+
+
+\begin{frame}{Direct torque control of DFIG}
+    \begin{figure}
+        \centering
+        \includegraphics[width=3.2in]{imgs/DTCrotor.png}
+    \end{figure}    
+\end{frame}
+
+\begin{frame}{Merits and Demerits of DFIGs}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+    \begin{block}{Merits}
+      \begin{itemize}
+      \item Easy on the \textbf{gearbox}. (Reduced mechanical stress due to power system).
+   
+        \item Better fault ride-through capability. Whereas synchronous generator will \textbf{slip} when $V_{stator}$ falls below a threshold.
+           \pause
+        \item Smaller converter size (only about 30\% of the rated power).
+        
+        \item Ability to support grid voltage and frequency regulation.
+      \end{itemize}
+    \end{block}
+    \column{0.5\textwidth}
+    \begin{block}{Demerits}
+      \begin{itemize}
+        \item Complex power conversion circuitry.
+        \item Slip ring and brush maintenance.
+      \end{itemize}
+    \end{block}
+  \end{columns}
+\end{frame}
+
 
 \section{Acknowledgements}
-\begin{frame}{References}
+\begin{frame}{References \emoji{book}}
     This presentation would not have been possible without the invaluable following:
     \vspace{0.1in}
     \begin{enumerate}
         \item \href{https://web.archive.org/web/20230526092355/https://labvolt.festo.com/downloads/86376_F0.pdf}{A \textbf{wonderful practical} introduction to DFIG from labvolt.festo.com}
 
-      \item \href{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-wind-turbine-principle.html}{Peng DFIGs principle with \textbf{beautiful} animations}
+        \item \href{https://www.pengky.cn/zz-horizontal-axis-turbine/13-doubly-fed-wind-turbine-principle/doubly-fed-wind-turbine-principle.html}{Peng DFIGs principle with \textbf{beautiful} animations}
       
         \item \href{https://www.wikiwand.com/en/Doubly_fed_electric_machine}{DFIG Wikipedia-Wikiwand}
-
         
         \item \href{https://new.abb.com/motors-generators/generators/generators-for-renewables/doubly-fed-generators}{ABB.com DFIGs}
         
         \item \href{https://www.youtube.com/watch?v=Fvc2I0L2vMU}{Evan Knapp video on DIFG}
         
-        \end{enumerate}
+        \item \href{https://explore.airgapflux.in}{My website - explore.airgapflux.in} (Additional resources on the subject)
+
+    \end{enumerate}
 \end{frame}
 
-\begin{frame}{Tools Utilized (References)}
+
+
+\begin{frame}{Tools used \emoji{wrench}}
     \begin{enumerate}
-        \item Latex Beamer source code for this presentation can be, found here  \href{https://github.com/200901002/DFIG-Seminar}{GitHub DFIG seminar Adhithya}
+        \item Latex Beamer source code for this presentation can be found here: \href{https://github.com/200901002/DFIG-Seminar}{GitHub DFIG seminar Adhithya}.
         
         \item Adobe Photoshop was used to edit some of the images.
 
-        \item \href{https://www.overleaf.com}{Overleaf.com, which was used for preparing this presentation.}
+        \item \href{https://www.overleaf.com}{Overleaf.com}, which was used for preparing this presentation.
         
         \item Special thanks to LaTeX Beamer tools and the authors of the Singapore theme, whose contributions greatly improved the quality of this presentation.
     \end{enumerate}
-\vspace{0.2in}
+    \vspace{0.2in}
 
-\begin{quote}
-    \textcolor{mbrown}{``Education is the journey that transforms curiosity into knowledge and passion into expertise.''}
-\end{quote}
+    \begin{quote}
+        \textcolor{mbrown}{``Education is the journey that transforms curiosity into knowledge and passion into expertise.''}
+    \end{quote}
 
-\begin{center}
-        {\Large{Thank you for your time.}}
-\end{center}
+    \begin{center}
+        {\Large{Thank you for your time \emoji{smile}}}
+    \end{center}
+
+    \begin{flushright}
+        {\textbf{Adhithya}} \\
+        Email \emoji{email}: \href{mailto:200901002@rajalakshmi.edu.in}{200901002@rajalakshmi.edu.in} \\
+        LinkedIn \emoji{man}: \href{https://www.linkedin.com/in/adhithya-s-2a4338240/}{linkedin.com/in/adhithya-s-2a4338240}
+    \end{flushright}
 \end{frame}
+
+
 
 \end{document}
